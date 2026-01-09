@@ -3,10 +3,7 @@
 1. Project Description
 ShieldAI is an intelligent, automated cybersecurity tool that protects users from phishing attacks in real-time. Unlike traditional antiviruses that scan files, ShieldAI "watches" the screen using Computer Vision (OCR). It detects malicious URLs and scam messages (SMS/Chat) instantly and alerts the user via a non-intrusive "Dynamic Island" style popup. It uses Explainable AI (SHAP) to show users why a link was flagged.
 
-2. Technology Stack & Libraries
-![alt text](image.png)
-
-3. Models & Algorithms
+2. Models & Algorithms
 We use a Dual-Model Architecture (Two separate brains working together).
 
 Model A: URL Phishing Detector
@@ -21,7 +18,7 @@ Feature Engineering: TF-IDF Vectorizer (Term Frequency-Inverse Document Frequenc
 Logic: Converts words into statistical weights. Words like "Urgent", "Winner", and "Bank" get high "suspicion scores."
 Accuracy: ~98% (Highly effective on short text).
 
-5. Workflow & Logic Flowchart
+3. Workflow & Logic Flowchart
 The Logic Loop (Runs every 2 seconds):
 
 Capture: mss takes a screenshot of the active window.
@@ -40,7 +37,7 @@ Action:
 If Safe: Do nothing.
 If Threat: Trigger DynamicIsland popup and log to Dashboard.
 
-6. File Usage Description
+4. File Usage Description
 Here is the breakdown of every file in your project folder:
 
 Root Folder
@@ -58,4 +55,5 @@ url_classifier.json: The trained XGBoost brain.
 nlp_model.pkl: The trained Random Forest brain.
 vectorizer.pkl: The dictionary used to understand English words.
 accuracy/ Folder
+
 Stores your generated performance reports and graphs (.png files).
